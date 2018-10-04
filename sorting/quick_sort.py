@@ -34,4 +34,9 @@ def partition(list_numbers):
 
 
 def quick_sort(list_numbers):
-    pass
+    if list_numbers == []:
+        return []
+    if len(list_numbers) == 1:
+        return list_numbers
+    partioned, index = partition(list_numbers)
+    return quick_sort(partioned[:index]) + [partioned[index]] + quick_sort(partioned[index + 1:])
